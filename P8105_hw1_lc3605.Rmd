@@ -61,7 +61,13 @@ Loads the **Penguins** dataset from _palmerpenguins_ package.
 data("penguins", package = "palmerpenguins")
 ```
 
+The **Penguins** dataset contains observation of 3 different types of penguin species (`r levels(pull(penguins, species))`) living on 3 islands (`r levels(pull(penguins, island))`), from `r min(penguins$year)` to `r max(penguins$year)`. The data contains the following variables: **`r ls(penguins)`**.
 
+The dataset contains `r nrow(penguins)` rows and `r ncol(penguins)` columns. 
+
+The mean flipper length was `r mean(pull(penguins, flipper_length_mm), na.rm=TRUE)` mm.  
+
+ 
 
 
 
