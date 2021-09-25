@@ -1,10 +1,30 @@
 ---
 title: "Homework #1"
 author: "Lynn Chen"
-date: "9/24/2021"
 output: github_document
 ---
 
 ```{r setup}
 library(tidyverse)
+```
+
+## Problem 1:
+
+This code junk will create:
+
+* a random sample of size 10 from a standard Normal distribution.
+* a logical vector indicating whether elements of the sample are greater than 0. 
+* a character vector of length 10
+* a factor vector of length 10, with 3 different factor “levels”
+
+```{r}
+set.seed(1234)
+
+problem1_df = 
+  tibble(
+    rand_sample = rnorm(10),
+    sample_greater_0 = rand_sample > 0,
+    char_vector = c("My", "name", "is", "Lynn", "A", "B", "C", "D", "E", "F"),
+    factor_vector = factor(c("Low", "Medium", "High", "High", "Low", "High", "Medium", "Low", "Low", "Medium"))
+  )
 ```
