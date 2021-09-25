@@ -31,7 +31,7 @@ problem1_df =
 
 Take the mean of each variable in my data frame.
 
-```{r mean pull }
+```{r mean pull, collapse = TRUE}
 mean(pull(problem1_df, rand_sample))
 mean(pull(problem1_df, sample_greater_than_0))
 mean(pull(problem1_df, char_vector))
@@ -40,7 +40,7 @@ mean(pull(problem1_df, factor_vector))
 
 Able to take the mean of numbers and logical variables, but not the character and factor vectors. 
 
-```{r}
+```{r as.numeric, collapse = TRUE}
 # Apply as.numeric function to the variables
 
 as.numeric(pull(problem1_df,rand_sample))
@@ -67,7 +67,15 @@ The dataset contains `r nrow(penguins)` rows and `r ncol(penguins)` columns.
 
 The mean flipper length was `r mean(pull(penguins, flipper_length_mm), na.rm=TRUE)` mm.  
 
- 
+```{r scatterplot, warning = FALSE, message = FALSE}
+## This code junk will make a scatterplot of flipper_length_mm (y) vs bill_length_mm (x). 
+
+ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point() + ggtitle("Flipper Length vs. Bill Length for Penguins by Species") + theme(plot.title = element_text(hjust = 0.25))
+
+ggsave("scatterplot_penguins.pdf")
+```
+
+
 
 
 
