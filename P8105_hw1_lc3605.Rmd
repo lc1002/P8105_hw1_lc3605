@@ -23,8 +23,21 @@ set.seed(1234)
 problem1_df = 
   tibble(
     rand_sample = rnorm(10),
-    sample_greater_0 = rand_sample > 0,
+    sample_greater_than_0 = rand_sample > 0,
     char_vector = c("My", "name", "is", "Lynn", "A", "B", "C", "D", "E", "F"),
     factor_vector = factor(c("Low", "Medium", "High", "High", "Low", "High", "Medium", "Low", "Low", "Medium"))
   )
 ```
+
+Take the mean of each variable in my data frame.
+
+```{r mean pull }
+mean(pull(problem1_df, rand_sample))
+mean(pull(problem1_df, sample_greater_than_0))
+mean(pull(problem1_df, char_vector))
+mean(pull(problem1_df, factor_vector))
+```
+
+Able to take the mean of numbers and logical variables, but not the character and factor vectors. 
+
+
