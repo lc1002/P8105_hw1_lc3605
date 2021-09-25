@@ -1,0 +1,10 @@
+---
+title: "Homework #1"
+author: "Lynn Chen"
+date: "9/24/2021"
+output: github_document
+---
+
+```{r setup}
+library(tidyverse)
+```
